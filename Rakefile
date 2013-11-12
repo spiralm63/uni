@@ -123,6 +123,10 @@ task "console" do
   exec "irb -r./config/environment"
 end
 
+task "db:console" do
+  exec 'psql uni_development'
+end
+
 desc "Run the specs"
 RSpec::Core::RakeTask.new(:spec)
 

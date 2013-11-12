@@ -13,7 +13,7 @@ class CreateSchema < ActiveRecord::Migration
       t.integer :student_id
     end
 
-    create_table :course do |t|
+    create_table :courses do |t|
       t.integer :instructor_id
       t.string  :title
       t.text    :description
