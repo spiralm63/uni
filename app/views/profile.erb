@@ -1,0 +1,19 @@
+<h1>Welcome, <%= current_user.first_name %></h1>
+<a href="/logout">Logout</a>
+
+<h2>Taken Courses</h2>
+<ul>
+  <% current_user.taken_courses.each do |course| %>
+  <li><%= course.title %></li>
+  <% end %>
+</ul>
+<a href="/participants/new">Take a Course</a>
+
+<h2>Taught Courses</h2>
+<ul>
+  <% current_user.taught_courses.each do |course| %>
+  <li><a href="/courses/<%= course.id %>"><%= course.title %></a></li>
+  <% end %>
+</ul>
+
+<a href="/courses/new">Create a Course</a>

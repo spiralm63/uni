@@ -1,0 +1,375 @@
+uni (master) $ be shotgun
+== Shotgun/Thin on http://127.0.0.1:9393/
+>> Thin web server (v1.5.0 codename Knife)
+>> Maximum connections set to 1024
+>> Listening on 127.0.0.1:9393, CTRL+C to stop
+D, [2013-11-12T16:58:53.315212 #36647] DEBUG -- :   User Load (0.9ms)  SELECT "users".* FROM "users" WHERE "users"."email" = 'mike@dbc.com' LIMIT 1
+D, [2013-11-12T16:58:53.851613 #36649] DEBUG -- :   User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T16:59:26.642105 #36655] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:02:13.122442 #36680] DEBUG -- :   User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:02:13.170497 #36680] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:02:30.371354 #36684] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:02:30.418585 #36684] DEBUG -- :   Course Load (0.8ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:02:30.420297 #36684] DEBUG -- :   Course Load (0.3ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:03:05.494988 #36690] DEBUG -- :   User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:03:05.541431 #36690] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:03:05.543182 #36690] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:08:59.161807 #36744] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses"
+D, [2013-11-12T17:08:59.186844 #36744] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:08:59.227566 #36744] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:09:48.061903 #36752] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses"
+D, [2013-11-12T17:09:48.086668 #36752] DEBUG -- :   User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:09:48.126004 #36752] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:11:23.807359 #36766] DEBUG -- :   Course Load (0.8ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = 3 LIMIT 1
+D, [2013-11-12T17:11:23.826825 #36766] DEBUG -- :   User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:11:23.855382 #36766] DEBUG -- :    (0.3ms)  BEGIN
+D, [2013-11-12T17:11:23.868258 #36766] DEBUG -- :   SQL (0.9ms)  INSERT INTO "participants" ("course_id", "student_id") VALUES ($1, $2) RETURNING "id"  [["course_id", 3], ["student_id", 3]]
+D, [2013-11-12T17:11:23.869671 #36766] DEBUG -- :    (0.9ms)  COMMIT
+D, [2013-11-12T17:11:24.343014 #36768] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:11:24.393600 #36768] DEBUG -- :   Course Load (0.6ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:11:24.399704 #36768] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:11:29.210213 #36771] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses"
+D, [2013-11-12T17:11:29.235153 #36771] DEBUG -- :   User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:11:29.273955 #36771] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:11:34.464764 #36773] DEBUG -- :   Course Load (0.6ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = 2 LIMIT 1
+D, [2013-11-12T17:11:34.497554 #36773] DEBUG -- :   User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:11:34.514284 #36773] DEBUG -- :    (0.2ms)  BEGIN
+D, [2013-11-12T17:11:34.528190 #36773] DEBUG -- :   SQL (1.5ms)  INSERT INTO "participants" ("course_id", "student_id") VALUES ($1, $2) RETURNING "id"  [["course_id", 2], ["student_id", 3]]
+D, [2013-11-12T17:11:34.529063 #36773] DEBUG -- :    (0.5ms)  COMMIT
+D, [2013-11-12T17:11:35.003741 #36776] DEBUG -- :   User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:11:35.051960 #36776] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:11:35.061497 #36776] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:13:12.284421 #36789] DEBUG -- :   User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:13:12.333324 #36789] DEBUG -- :   Course Load (0.6ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:13:12.339794 #36789] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+TypeError - exception class/object expected:
+  /Users/apprentice/Desktop/uni/app/controllers/courses.rb:6:in `raise'
+  /Users/apprentice/Desktop/uni/app/controllers/courses.rb:6:in `block in <top (required)>'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1293:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1293:in `block in compile!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:860:in `[]'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:860:in `block (3 levels) in route!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:876:in `route_eval'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:860:in `block (2 levels) in route!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:897:in `block in process_route'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:895:in `catch'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:895:in `process_route'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:859:in `block in route!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:858:in `each'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:858:in `route!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:963:in `block in dispatch!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `block in invoke'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `catch'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `invoke'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:960:in `dispatch!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:794:in `block in call!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `block in invoke'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `catch'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `invoke'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:794:in `call!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:780:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/xss_header.rb:27:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/base.rb:48:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/base.rb:48:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/path_traversal.rb:16:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/json_csrf.rb:17:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/base.rb:48:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/base.rb:48:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/xss_header.rb:27:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/logger.rb:15:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:154:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/showexceptions.rb:21:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:124:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1417:in `block in call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1499:in `synchronize'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1417:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/lint.rb:49:in `_call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/lint.rb:37:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/showexceptions.rb:24:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/commonlogger.rb:33:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:161:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/loader.rb:86:in `proceed_as_child'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/loader.rb:31:in `call!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/loader.rb:18:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/favicon.rb:12:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/static.rb:14:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/builder.rb:138:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/server.rb:159:in `start'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/handler/thin.rb:16:in `run'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/bin/shotgun:156:in `<top (required)>'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/bin/shotgun:19:in `load'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/bin/shotgun:19:in `<main>'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/bin/ruby_noexec_wrapper:14:in `eval'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/bin/ruby_noexec_wrapper:14:in `<main>'
+RuntimeError - {"course"=>{"title"=>"Mike's Course", "description"=>"a course on things."}}:
+  /Users/apprentice/Desktop/uni/app/controllers/courses.rb:6:in `block in <top (required)>'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1293:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1293:in `block in compile!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:860:in `[]'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:860:in `block (3 levels) in route!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:876:in `route_eval'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:860:in `block (2 levels) in route!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:897:in `block in process_route'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:895:in `catch'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:895:in `process_route'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:859:in `block in route!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:858:in `each'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:858:in `route!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:963:in `block in dispatch!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `block in invoke'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `catch'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `invoke'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:960:in `dispatch!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:794:in `block in call!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `block in invoke'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `catch'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:946:in `invoke'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:794:in `call!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:780:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/xss_header.rb:27:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/base.rb:48:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/base.rb:48:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/path_traversal.rb:16:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/json_csrf.rb:17:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/base.rb:48:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/base.rb:48:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-protection-1.3.2/lib/rack/protection/xss_header.rb:27:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/logger.rb:15:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:154:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/showexceptions.rb:21:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:124:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1417:in `block in call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1499:in `synchronize'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:1417:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/lint.rb:49:in `_call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/lint.rb:37:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/showexceptions.rb:24:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/commonlogger.rb:33:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/sinatra-1.3.4/lib/sinatra/base.rb:161:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/loader.rb:86:in `proceed_as_child'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/loader.rb:31:in `call!'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/loader.rb:18:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/favicon.rb:12:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/lib/shotgun/static.rb:14:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/builder.rb:138:in `call'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:81:in `block in pre_process'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:79:in `catch'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:79:in `pre_process'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:54:in `process'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/connection.rb:39:in `receive_data'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/eventmachine-1.0.0/lib/eventmachine.rb:187:in `run_machine'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/eventmachine-1.0.0/lib/eventmachine.rb:187:in `run'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/backends/base.rb:63:in `start'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/thin-1.5.0/lib/thin/server.rb:159:in `start'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/rack-1.5.2/lib/rack/handler/thin.rb:16:in `run'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/shotgun-0.9/bin/shotgun:156:in `<top (required)>'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/bin/shotgun:19:in `load'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/bin/shotgun:19:in `<main>'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/bin/ruby_noexec_wrapper:14:in `eval'
+  /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/bin/ruby_noexec_wrapper:14:in `<main>'
+D, [2013-11-12T17:20:31.816777 #36848] DEBUG -- :   User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:20:31.845989 #36848] DEBUG -- :    (0.3ms)  BEGIN
+D, [2013-11-12T17:20:31.861603 #36848] DEBUG -- :   SQL (1.3ms)  INSERT INTO "courses" ("created_at", "description", "instructor_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", 2013-11-12 17:20:31 -0600], ["description", "a course on things."], ["instructor_id", 3], ["title", "Mike's Course"], ["updated_at", 2013-11-12 17:20:31 -0600]]
+D, [2013-11-12T17:20:31.862439 #36848] DEBUG -- :    (0.5ms)  COMMIT
+D, [2013-11-12T17:20:32.334293 #36850] DEBUG -- :   User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:20:32.382451 #36850] DEBUG -- :   Course Load (1.3ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:20:32.390419 #36850] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:21:27.305225 #36866] DEBUG -- :   User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:21:27.353911 #36866] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:21:27.360347 #36866] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:23:15.312761 #36881] DEBUG -- :   Course Load (1.5ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "6"]]
+D, [2013-11-12T17:25:21.819304 #36900] DEBUG -- :   Course Load (1.1ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "6"]]
+D, [2013-11-12T17:29:57.307177 #36938] DEBUG -- :   Course Load (1.4ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "6"]]
+D, [2013-11-12T17:32:24.126398 #37014] DEBUG -- :   Course Load (1.0ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "6"]]
+D, [2013-11-12T17:32:24.131300 #37014] DEBUG -- :    (0.2ms)  BEGIN
+D, [2013-11-12T17:32:24.137351 #37014] DEBUG -- :    (0.5ms)  UPDATE "courses" SET "title" = 'Things 101', "updated_at" = '2013-11-12 17:32:24.132661' WHERE "courses"."id" = 6
+D, [2013-11-12T17:32:24.138108 #37014] DEBUG -- :    (0.5ms)  COMMIT
+D, [2013-11-12T17:32:24.608064 #37016] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:32:24.654344 #37016] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:32:24.661052 #37016] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:32:31.011509 #37019] DEBUG -- :   Course Load (1.2ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "6"]]
+D, [2013-11-12T17:33:58.009002 #37035] DEBUG -- :   Course Load (1.4ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "6"]]
+D, [2013-11-12T17:34:31.649501 #37042] DEBUG -- :   Course Load (1.1ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "6"]]
+D, [2013-11-12T17:34:31.654443 #37042] DEBUG -- :    (0.4ms)  BEGIN
+D, [2013-11-12T17:34:31.658555 #37042] DEBUG -- :   SQL (3.4ms)  DELETE FROM "courses" WHERE "courses"."id" = $1  [["id", 6]]
+D, [2013-11-12T17:34:31.659341 #37042] DEBUG -- :    (0.6ms)  COMMIT
+D, [2013-11-12T17:34:32.127063 #37044] DEBUG -- :   User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:34:32.173836 #37044] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:34:32.181394 #37044] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:34:40.783472 #37048] DEBUG -- :   User Load (0.9ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:34:40.798638 #37048] DEBUG -- :    (0.4ms)  BEGIN
+D, [2013-11-12T17:34:40.813313 #37048] DEBUG -- :   SQL (1.4ms)  INSERT INTO "courses" ("created_at", "description", "instructor_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", 2013-11-12 17:34:40 -0600], ["description", "woo\r\n"], ["instructor_id", 3], ["title", "Things 101"], ["updated_at", 2013-11-12 17:34:40 -0600]]
+D, [2013-11-12T17:34:40.814145 #37048] DEBUG -- :    (0.5ms)  COMMIT
+D, [2013-11-12T17:34:41.296849 #37050] DEBUG -- :   User Load (0.5ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:34:41.345743 #37050] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:34:41.351949 #37050] DEBUG -- :   Course Load (0.4ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:34:44.832831 #37053] DEBUG -- :   Course Load (1.2ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "7"]]
+D, [2013-11-12T17:34:46.755558 #37055] DEBUG -- :   Course Load (1.3ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "7"]]
+D, [2013-11-12T17:34:51.057103 #37057] DEBUG -- :   Course Load (1.0ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "7"]]
+D, [2013-11-12T17:34:51.062555 #37057] DEBUG -- :    (0.2ms)  BEGIN
+D, [2013-11-12T17:34:51.068970 #37057] DEBUG -- :    (0.9ms)  UPDATE "courses" SET "description" = 'wee woo
+', "updated_at" = '2013-11-12 17:34:51.063934' WHERE "courses"."id" = 7
+D, [2013-11-12T17:34:51.070246 #37057] DEBUG -- :    (0.9ms)  COMMIT
+D, [2013-11-12T17:34:51.550867 #37059] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:34:51.597892 #37059] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:34:51.603762 #37059] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:34:54.148755 #37062] DEBUG -- :   Course Load (1.0ms)  SELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", "7"]]
+D, [2013-11-12T17:35:32.176360 #37071] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:35:32.811418 #37073] DEBUG -- :   User Load (0.9ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:35:32.863815 #37073] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:35:32.870161 #37073] DEBUG -- :   Course Load (0.6ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+D, [2013-11-12T17:38:05.960365 #37097] DEBUG -- :   User Load (0.7ms)  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+D, [2013-11-12T17:38:15.907563 #37103] DEBUG -- :   User Load (0.9ms)  SELECT "users".* FROM "users" WHERE "users"."email" = 'mike@dbc.com' LIMIT 1
+D, [2013-11-12T17:38:16.477770 #37105] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:38:16.956596 #37107] DEBUG -- :   User Load (0.8ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+D, [2013-11-12T17:38:16.992232 #37107] DEBUG -- :   Course Load (0.8ms)  SELECT "courses".* FROM "courses" INNER JOIN "participants" ON "courses"."id" = "participants"."course_id" WHERE "participants"."student_id" = 3
+D, [2013-11-12T17:38:16.998462 #37107] DEBUG -- :   Course Load (0.5ms)  SELECT "courses".* FROM "courses" WHERE "courses"."instructor_id" = 3
+
+***************************
+
+
+
+SECOND WINDOW
+
+
+
+******************
+
+Last login: Tue Nov 12 15:56:44 on ttys001
+uni (master) $ bundle exec
+bundler: exec needs a command to run
+uni (master) $ bundle exec rake console
+1.9.3p374 :001 > u = User.create(:first_name => "Mike", :email => "mike@dbc.com", :password => "password")
+Gem::LoadError: bcrypt-ruby is not part of the bundle. Add it to Gemfile.
+  from /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/bundler-1.2.3/lib/bundler/rubygems_integration.rb:147:in `block in replace_gem'
+  from /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/activemodel-3.2.12/lib/active_model/secure_password.rb:37:in `has_secure_password'
+  from /Users/apprentice/Desktop/uni/app/models/user.rb:8:in `<class:User>'
+  from /Users/apprentice/Desktop/uni/app/models/user.rb:1:in `<top (required)>'
+  from (irb):1
+  from /Users/apprentice/.rvm/rubies/ruby-1.9.3-p374/bin/irb:16:in `<main>'
+1.9.3p374 :002 > exit
+uni (master) $ bundle exec rake console
+1.9.3p374 :001 > u = User.create(:first_name => "Mike", :email => "mike@dbc.com", :password => "password")
+Gem::LoadError: can't activate bcrypt-ruby (~> 3.0.0), already activated bcrypt-ruby-3.1.2. Make sure all dependencies are added to Gemfile.
+  from /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/bundler-1.2.3/lib/bundler/rubygems_integration.rb:157:in `block in replace_gem'
+  from /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/activemodel-3.2.12/lib/active_model/secure_password.rb:37:in `has_secure_password'
+  from /Users/apprentice/Desktop/uni/app/models/user.rb:8:in `<class:User>'
+  from /Users/apprentice/Desktop/uni/app/models/user.rb:1:in `<top (required)>'
+  from (irb):1
+  from /Users/apprentice/.rvm/rubies/ruby-1.9.3-p374/bin/irb:16:in `<main>'
+1.9.3p374 :002 > exit
+uni (master) $ bundle install
+Using rake (10.0.3)
+Using i18n (0.6.1)
+Using multi_json (1.6.1)
+Using activesupport (3.2.12)
+Using builder (3.0.4)
+Using activemodel (3.2.12)
+Using arel (3.0.2)
+Using tzinfo (0.3.35)
+Using activerecord (3.2.12)
+Using backports (2.6.1)
+Using bcrypt-ruby (3.1.2)
+Using daemons (1.1.9)
+Using diff-lcs (1.1.3)
+Using eventmachine (1.0.0)
+Using faker (1.1.2)
+Using pg (0.14.1)
+Using rack (1.5.2)
+Using rack-protection (1.3.2)
+Using rack-test (0.6.2)
+Using rspec-core (2.12.2)
+Using rspec-expectations (2.12.1)
+Using rspec-mocks (2.12.2)
+Using rspec (2.12.0)
+Using shotgun (0.9)
+Using tilt (1.3.3)
+Using sinatra (1.3.4)
+Using sinatra-contrib (1.3.1)
+Using thin (1.5.0)
+Using bundler (1.2.3)
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+uni (master) $ bundle exec rake console
+1.9.3p374 :001 > u = User.create(:first_name => "Mike", :email => "mike@dbc.com", :password => "password")
+Gem::LoadError: can't activate bcrypt-ruby (~> 3.0.0), already activated bcrypt-ruby-3.1.2. Make sure all dependencies are added to Gemfile.
+  from /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/bundler-1.2.3/lib/bundler/rubygems_integration.rb:157:in `block in replace_gem'
+  from /Users/apprentice/.rvm/gems/ruby-1.9.3-p374/gems/activemodel-3.2.12/lib/active_model/secure_password.rb:37:in `has_secure_password'
+  from /Users/apprentice/Desktop/uni/app/models/user.rb:8:in `<class:User>'
+  from /Users/apprentice/Desktop/uni/app/models/user.rb:1:in `<top (required)>'
+  from (irb):1
+  from /Users/apprentice/.rvm/rubies/ruby-1.9.3-p374/bin/irb:16:in `<main>'
+1.9.3p374 :002 > exit
+uni (master) $ bundle install
+Using rake (10.0.3)
+Using i18n (0.6.1)
+Using multi_json (1.6.1)
+Using activesupport (3.2.12)
+Using builder (3.0.4)
+Using activemodel (3.2.12)
+Using arel (3.0.2)
+Using tzinfo (0.3.35)
+Using activerecord (3.2.12)
+Using backports (2.6.1)
+Using bcrypt-ruby (3.0.1)
+Using daemons (1.1.9)
+Using diff-lcs (1.1.3)
+Using eventmachine (1.0.0)
+Using faker (1.1.2)
+Using pg (0.14.1)
+Using rack (1.5.2)
+Using rack-protection (1.3.2)
+Using rack-test (0.6.2)
+Using rspec-core (2.12.2)
+Using rspec-expectations (2.12.1)
+Using rspec-mocks (2.12.2)
+Using rspec (2.12.0)
+Using shotgun (0.9)
+Using tilt (1.3.3)
+Using sinatra (1.3.4)
+Using sinatra-contrib (1.3.1)
+Using thin (1.5.0)
+Using bundler (1.2.3)
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+uni (master) $ bundle exec rake console
+1.9.3p374 :001 > u = User.create(:first_name => "Mike", :email => "mike@dbc.com", :password => "password")
+D, [2013-11-12T16:58:34.587333 #36628] DEBUG -- :    (0.3ms)  BEGIN
+D, [2013-11-12T16:58:34.593127 #36628] DEBUG -- :   SQL (4.2ms)  INSERT INTO "users" ("created_at", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", 2013-11-12 16:58:34 -0600], ["email", "mike@dbc.com"], ["first_name", "Mike"], ["last_name", nil], ["password_digest", "$2a$10$qCpZ1ASSxRyoY8Vm.WaCMORk7169rNrPNrO53ICn.NNXUjH6PA8sK"], ["updated_at", 2013-11-12 16:58:34 -0600]]
+D, [2013-11-12T16:58:34.594109 #36628] DEBUG -- :    (0.6ms)  COMMIT
+ => #<User id: 3, first_name: "Mike", last_name: nil, email: "mike@dbc.com", password_digest: "$2a$10$qCpZ1ASSxRyoY8Vm.WaCMORk7169rNrPNrO53ICn.NNX...", created_at: "2013-11-12 16:58:34", updated_at: "2013-11-12 16:58:34">
+1.9.3p374 :002 > Course.create(:title => "Math 101")
+D, [2013-11-12T17:09:15.647702 #36628] DEBUG -- :    (0.3ms)  BEGIN
+D, [2013-11-12T17:09:15.649996 #36628] DEBUG -- :   SQL (0.9ms)  INSERT INTO "courses" ("created_at", "description", "instructor_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", 2013-11-12 17:09:15 -0600], ["description", nil], ["instructor_id", nil], ["title", "Math 101"], ["updated_at", 2013-11-12 17:09:15 -0600]]
+D, [2013-11-12T17:09:15.650638 #36628] DEBUG -- :    (0.4ms)  COMMIT
+ => #<Course id: 2, instructor_id: nil, title: "Math 101", description: nil, created_at: "2013-11-12 17:09:15", updated_at: "2013-11-12 17:09:15">
+1.9.3p374 :003 > Course.create(:title => "Dancing 400")
+D, [2013-11-12T17:09:30.782730 #36628] DEBUG -- :    (0.3ms)  BEGIN
+D, [2013-11-12T17:09:30.785157 #36628] DEBUG -- :   SQL (0.7ms)  INSERT INTO "courses" ("created_at", "description", "instructor_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", 2013-11-12 17:09:30 -0600], ["description", nil], ["instructor_id", nil], ["title", "Dancing 400"], ["updated_at", 2013-11-12 17:09:30 -0600]]
+D, [2013-11-12T17:09:30.786281 #36628] DEBUG -- :    (0.6ms)  COMMIT
+ => #<Course id: 3, instructor_id: nil, title: "Dancing 400", description: nil, created_at: "2013-11-12 17:09:30", updated_at: "2013-11-12 17:09:30">
+1.9.3p374 :004 > Course.create(:title => "Dancing 401")
+D, [2013-11-12T17:09:34.044857 #36628] DEBUG -- :    (0.3ms)  BEGIN
+D, [2013-11-12T17:09:34.046601 #36628] DEBUG -- :   SQL (0.5ms)  INSERT INTO "courses" ("created_at", "description", "instructor_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", 2013-11-12 17:09:34 -0600], ["description", nil], ["instructor_id", nil], ["title", "Dancing 401"], ["updated_at", 2013-11-12 17:09:34 -0600]]
+D, [2013-11-12T17:09:34.047531 #36628] DEBUG -- :    (0.5ms)  COMMIT
+ => #<Course id: 4, instructor_id: nil, title: "Dancing 401", description: nil, created_at: "2013-11-12 17:09:34", updated_at: "2013-11-12 17:09:34">
+1.9.3p374 :005 > Course.create(:title => "Dancing 402")
+D, [2013-11-12T17:09:38.182088 #36628] DEBUG -- :    (0.3ms)  BEGIN
+D, [2013-11-12T17:09:38.183724 #36628] DEBUG -- :   SQL (0.5ms)  INSERT INTO "courses" ("created_at", "description", "instructor_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", 2013-11-12 17:09:38 -0600], ["description", nil], ["instructor_id", nil], ["title", "Dancing 402"], ["updated_at", 2013-11-12 17:09:38 -0600]]
+D, [2013-11-12T17:09:38.184724 #36628] DEBUG -- :    (0.6ms)  COMMIT
+ => #<Course id: 5, instructor_id: nil, title: "Dancing 402", description: nil, created_at: "2013-11-12 17:09:38", updated_at: "2013-11-12 17:09:38">
+1.9.3p374 :006 >

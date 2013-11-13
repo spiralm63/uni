@@ -1,0 +1,11 @@
+<form action="/courses/<%= @course.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="course[title]">Title:</label>
+  <input name="course[title]" type="text" value="<%= @course.title %>">
+
+  <label for="course[description]">Description:</label>
+  <textarea name="course[description]"><%= @course.description %></textarea>
+
+  <input type="submit" value="Edit course">
+</form>
